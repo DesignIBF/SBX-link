@@ -1,4 +1,4 @@
 .active {
   background-color: rgb(12, 51, 31);
-  color: white;
+  color: white !important;
 }
