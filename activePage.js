@@ -11,3 +11,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+console.log("Custom Script is active")
