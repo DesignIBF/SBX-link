@@ -1,22 +1,23 @@
-function applyActiveClass() {
-    // Select the span with the active text
-    const activeSpan = document.querySelector("#i2q276 span");
+function waitForElements() {
+    console.log("Checking for elements...");
 
-    // Select all <a> elements inside the navigation div
+    const activeSpan = document.querySelector("#i2q276 span");
     const links = document.querySelectorAll("#iq9l-2 a");
 
-    // If elements aren't ready, retry in 200ms
     if (!activeSpan || links.length === 0) {
-        console.log("Elements not ready yet, retrying...");
-        setTimeout(applyActiveClass, 200);
+        console.log("Elements not found yet, retrying...");
+        setTimeout(waitForElements, 200); // Retry in 200ms
         return;
     }
 
-    // Get the active text from the span
+    console.log("Elements found! Proceeding with class assignment...");
+    applyActiveClass(activeSpan, links);
+}
+
+function applyActiveClass(activeSpan, links) {
     const activeText = activeSpan.textContent.trim();
     console.log("Active Span Text:", activeText);
 
-    // Loop through links to find a match
     links.forEach(link => {
         const linkText = link.textContent.trim();
         console.log("Checking link text:", linkText);
@@ -28,9 +29,10 @@ function applyActiveClass() {
     });
 }
 
-// Run the function after page load
+// Ensure the script runs after full page load
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(applyActiveClass, 500); // Start checking after initial delay
+    console.log("Script is running, waiting for elements...");
+    waitForElements();
 });
 
 console.log("Custom Script is active");
