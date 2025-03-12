@@ -1,39 +1,33 @@
-// function waitForElements() {
-//     console.log("Checking for elements...");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("🚀 Script running after DOMContentLoaded");
 
-//     const activeSpan = document.querySelector("#i2q276 span");
-//     const links = document.querySelectorAll("#iq9l-2 a");
+    // Select the span inside #i2q276
+    const activeSpan = document.querySelector("#i2q276 span");
 
-//     if (!activeSpan || links.length === 0) {
-//         console.log("Elements not found yet, retrying...");
-//         setTimeout(waitForElements, 200); // Retry in 200ms
-//         return;
-//     }
+    if (!activeSpan) {
+        console.log("❌ SPAN element not found!");
+        return;
+    }
 
-//     console.log("Elements found! Proceeding with class assignment...");
-//     applyActiveClass(activeSpan, links);
-// }
+    console.log("✅ SPAN element found:", activeSpan);
 
-// function applyActiveClass(activeSpan, links) {
-//     const activeText = activeSpan.textContent.trim();
-//     console.log("Active Span Text:", activeText);
+    // Get the text from the span and trim spaces
+    const activeText = activeSpan.textContent.trim();
+    console.log("Active Span Text:", activeText);
 
-//     links.forEach(link => {
-//         const linkText = link.textContent.trim();
-//         console.log("Checking link text:", linkText);
+    // Select all <a> elements inside the navigation div
+    const links = document.querySelectorAll("#iq9l-2 a");
 
-//         if (linkText === activeText) {
-//             console.log("Match found! Adding active class to:", link.href);
-//             link.classList.add("active");
-//         }
-//     });
-// }
+    links.forEach(link => {
+        const linkText = link.textContent.trim();
+        console.log("Checking link text:", linkText);
 
-// // Ensure the script runs after full page load
-// document.addEventListener("DOMContentLoaded", () => {
-//     console.log("Script is running, waiting for elements...");
-//     waitForElements();
-// });
+        if (linkText === activeText) {
+            console.log("🎯 Match found! Adding active class to:", link.href);
+            link.classList.add("active");
+        }
+    });
+});
 
 console.log("🚀 Script is linked and running!");
 
