@@ -35,4 +35,9 @@ document.addEventListener("DOMContentLoaded", () => {
     waitForElements();
 });
 
-console.log("Custom Script is active");
+console.log("🚀 Script is linked and running!");
+
+// Try forcing a log every second to confirm execution
+setInterval(() => {
+    console.log("⏳ Script is still running...");
+}, 1000);
