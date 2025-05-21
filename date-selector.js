@@ -1,4 +1,4 @@
-<script>
+
   document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.getElementById("i4ael");
 
@@ -40,4 +40,4 @@
       }
     });
   });
-</script>
+
